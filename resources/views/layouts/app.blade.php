@@ -277,7 +277,7 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <!-- NO QUITAR -->
-                <strong>PRUEBA DE PHP CON FRAMEWORK
+                <strong>PRUEBA DE PHP CON FRAMEWORK LARAVEL
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 1.0
                     </div>

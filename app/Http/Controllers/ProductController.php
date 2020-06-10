@@ -54,7 +54,9 @@ class ProductController extends Controller
         $product->name=request('name');
         $product->description=request('description');
         $product->weight=request('weight');
-        $product->price=request('price');       
+
+
+        $product->price=str_replace( ',', '', request('price'));       
         $product->category_id=request('select_category'); 
        
        $product->save();

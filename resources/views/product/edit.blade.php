@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-sm-6">
 
-            <h2>Edit Category</h2>
+            <h2>Edit Product</h2>
 
             @if ($errors->any())
             <div class="alert alert-danger">
