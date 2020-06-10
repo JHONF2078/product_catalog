@@ -277,7 +277,7 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <!-- NO QUITAR -->
-                <strong>Tutoriales YouTube
+                <strong>PRUEBA DE PHP CON FRAMEWORK
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 1.0
                     </div>
