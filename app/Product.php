@@ -8,6 +8,6 @@ class Product extends Model
 {
     public function photos()
     {
-        return $this->hasMany('App\Photo','products_id');
+        return $this->hasMany('App\Photo','product_id');
     }
 }
