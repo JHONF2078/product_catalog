@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $parents = Category::where("isAvailable","=",0)->where("isAvailable","=",1)->get();//  0= is not available 1= available 2= used 3= deleted
+        $parents = Category::where("isAvailable","=",0)->orwhere("isAvailable","=",1)->get();//  0= is not available 1= available 2= used 3= deleted
        
         return view('category.create',['parents'=>$parents]);
     }
@@ -98,7 +98,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $parents = Category::where("isAvailable","=",0)->where("isAvailable","=",1)->get();;//  0= is not available 1= available 2= used 3= delete
+        $parents = Category::where("isAvailable","=",0)->orwhere("isAvailable","=",1)->get();;//  0= is not available 1= available 2= used 3= delete
         
         return view('category.edit',['category'=>Category::findOrFail($id),'parents'=>$parents]);
     }

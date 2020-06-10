@@ -32,7 +32,7 @@ class ProductController extends Controller
 
         $usd_value=  $this->Convert();
 
-        $categories_availables = Category::where("isAvailable","=","1")->where("isAvailable","=","2")->get();
+        $categories_availables = Category::where("isAvailable","=","1")->orwhere("isAvailable","=","2")->get();
        
         return view('product.create',['categories'=>$categories_availables,'dolar_value'=>$usd_value]);
     }
@@ -113,7 +113,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $categories =Category::where("isAvailable","=","1")->where("isAvailable","=","2")->get();//  0= is not available 1= available 2= used 3=delete
+        $categories =Category::where("isAvailable","=","1")->orwhere("isAvailable","=","2")->get();//  0= is not available 1= available 2= used 3=delete
 
         $photos=Photo::where("product_id","=",$id)->get();
 
