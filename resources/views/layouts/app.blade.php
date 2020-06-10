@@ -14,6 +14,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="dist/js/adminlte.js"></script>
+    <script src="{{ asset('js/helpers.js') }}" defer></script>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -154,7 +155,7 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="{{ url('/') }}" class="brand-link">
-                    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                         style="opacity: .8">
                     <span class="brand-text font-weight-light">System Team</span>
                 </a>
@@ -164,7 +165,7 @@
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
                             <a href="#" class="d-block">
@@ -174,7 +175,7 @@
                                 {{ Auth::user()->name }}
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
-                                    Cerrar Sesión
+                                   Sign off
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -200,13 +201,24 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="usuarios"
-                                    class="{{ Request::path() === 'usuarios' ? 'nav-link active' : 'nav-link' }}">
+                                <a href="{{url('categories')}}" class="{{ Request::path() === 'categories' ? 'nav-link active' : 'nav-link' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>
-                                        Usuarios
-                                        <?php use App\User; $users_count = User::all()->count(); ?>
-                                        <span class="right badge badge-danger">{{ $users_count ?? '0' }}</span>
+                                        Categories    
+                                        <?php use App\Category; $categories_count = Category::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $categories_count ?? '0' }}</span>                                   
+                                    </p>
+                                </a>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <a href="{{url('products')}}" class="{{ Request::path() === 'products' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Products    
+                                        <?php use App\Product; $products_count = Product::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $products_count ?? '0' }}</span>                                   
                                     </p>
                                 </a>
                             </li>

@@ -20,3 +20,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
  
 Route::post('/login-two-factor/{user}', 'Auth\LoginController@login2FA')->name('login.2fa');
+
+
+Route::resource('categories', 'CategoryController');
+
+Route::resource('products', 'ProductController');
+
