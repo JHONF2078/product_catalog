@@ -7,6 +7,8 @@ use App\Product;
 use App\Category;
 use App\Photo;
 use GuzzleHttp\Client;
+use App\Http\Requests\ProductCreateRequest;
+use App\Http\Requests\ProductEditRequest;
 
 class ProductController extends Controller
 {
@@ -43,7 +45,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductCreateRequest $request)
     {
 
         $product=new Product(); 
@@ -130,7 +132,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductEditRequest $request, $id)
     {
         $product=Product::findOrFail($id);
         $category=Category::where("id","=",request('select_category'))->first();;
@@ -142,7 +144,6 @@ class ProductController extends Controller
         $product->weight=request('weight');
         $product->price=request('price');       
         $product->category_id=request('select_category'); 
-
       
        
        $product->update();
