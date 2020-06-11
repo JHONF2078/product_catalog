@@ -29,13 +29,10 @@ class ProductEditRequest extends FormRequest
             'weight' => 'required', 
             'price' => 'required',  
             'description' => 'required|min:20|max:50',  
-            'select_category'=> 'required',
-            'photo_product_1' => 'required|mimes:jpeg,png',
-            'photo_product_2' => 'required|mimes:jpeg,png',
-            'photo_product_3' => 'required|mimes:jpeg,png',  
-            'photo_product_1_description'=>  'required|min:20|max:50',   
-            'photo_product_2_description'=>  'required|min:20|max:50',   
-            'photo_product_3_description'=>  'required|min:20|max:50',   
+            'select_category'=> 'required',         
+            'photo_product_1_description'=>  'required|min:10|max:50',   
+            'photo_product_2_description'=>  'required|min:10|max:50',   
+            'photo_product_3_description'=>  'required|min:10|max:50',   
         ];
     }
 }
