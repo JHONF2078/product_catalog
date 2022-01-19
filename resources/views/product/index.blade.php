@@ -17,7 +17,7 @@
                 <th scope="col">weight</th>
                 <th scope="col">Price</th>
                 <th scope="col">Category</th>
-                <th scope="col">Action</th>
+                <th scope="col">Actiones1</th>
             </tr>
         </thead>
         <tbody>
